@@ -1,0 +1,68 @@
+$default: rgb(238, 238, 238);
+$default-inverse: #000;
+$default-active: rgb(238, 238, 238);
+
+$light-text: #fff;
+$dark-txt: #000;
+$secondary: rgb(17, 17, 99);
+
+$primary: rgb(58, 58, 255);
+$primary-text: $light-text;
+$primary-active: $secondary;
+
+$success: rgb(12, 179, 12);
+$success-text: $light-text;
+$success-active: rgb(14, 104, 14);
+
+$warning: rgb(255, 183, 50);
+$warning-text: $light-text;
+$warning-active: rgb(228, 156, 22);
+
+$danger: rgb(219, 35, 35);
+$danger-text: $light-text;
+$danger-active: rgb(165, 4, 4);
+
+$dark: $secondary;
+$dark-text: $light-text;
+$dark-active: rgb(8, 8, 68);
+
+
+
+
+.txt {
+    &-light {
+        color: $light-text;
+    }
+
+    &-dark {
+        color: $dark-txt !important;
+    }
+}
+
+@mixin bgSetup($bgColor: $default, $textColor: $default-inverse) {
+    background-color: $bgColor;
+    color: $textColor;
+}
+
+
+.bg {
+    &-p {
+        @include bgSetup($primary, $primary-text)
+    }
+
+    &-s {
+        @include bgSetup($success, $success-text)
+    }
+
+    &-w {
+        @include bgSetup($warning, $warning-text)
+    }
+
+    &-d {
+        @include bgSetup($danger, $danger-text)
+    }
+
+    &-dk {
+        @include bgSetup($dark, $dark-text)
+    }
+}

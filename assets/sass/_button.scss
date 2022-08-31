@@ -1,0 +1,60 @@
+@use 'colors';
+
+@mixin buttonTheme($bgColor: colors.$default, $textColor: colors.$default-inverse, $hoverColor: colors.$default) {
+        background-color: $bgColor;
+        color: $textColor;
+
+        &:hover {
+            background-color: $hoverColor;
+        }
+}
+
+.button {
+    padding: 10px 25px;
+    background-color: colors.$default;
+    color: colors.$default-inverse;
+    border: colors.$default;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 300ms;
+
+    &:hover {
+        box-shadow: 0px 10px 20px 0px rgba($color: #000000, $alpha: 0.20);
+    }
+
+    &-bold-none {
+        font-weight: normal;
+    }
+
+    &-sm {
+        padding: 8px 15px;
+    }
+
+    &-lg {
+        padding: 10px 35px;
+    }
+
+    &-expand {
+        width: 100%;
+    }
+
+    &-p {
+        @include buttonTheme(colors.$primary, colors.$primary-text, colors.$primary-active)
+    }
+
+    &-s {
+        @include buttonTheme(colors.$success, colors.$success-text, colors.$success-active)
+    }
+
+    &-w {
+        @include buttonTheme(colors.$warning, colors.$warning-text, colors.$warning-active)
+    }
+
+    &-d {
+        @include buttonTheme(colors.$danger, colors.$danger-text, colors.$danger-active)
+    }
+
+    &-dk {
+        @include buttonTheme(colors.$dark, colors.$dark-text, colors.$dark-active)
+    }
+}

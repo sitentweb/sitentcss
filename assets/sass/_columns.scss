@@ -1,0 +1,90 @@
+
+$colBlock: calc(100 / 12);
+
+@mixin columnSetup($col: 12) {
+    width: $colBlock * $col + 0%;
+}
+
+.cl {
+    width: 100%;
+    height: 100%;
+
+    &-row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &-gap {
+        gap: 1px;
+
+        &-2 {
+            gap: 5px;
+        }
+
+        &-5 {
+            gap: 10px;
+        }
+    }
+
+    &-12 {
+        @include columnSetup(12)
+    }
+
+    &-11 {
+        @include columnSetup(11)
+    }
+
+    &-10 {
+        @include columnSetup(10)
+    }
+
+    &-9 {
+        @include columnSetup(9)
+    }
+
+    &-8 {
+        @include columnSetup(8)
+    }
+
+    &-7 {
+        @include columnSetup(7)
+    }
+
+    &-6 {
+        @include columnSetup(6)
+    }
+
+    &-5 {
+        @include columnSetup(5)
+    }
+
+    &-4 {
+        @include columnSetup(4)
+    }
+
+    &-3 {
+        @include columnSetup(3)
+    }
+
+    &-2 {
+        @include columnSetup(2)
+    }
+
+    &-1 {
+        @include columnSetup(1)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
